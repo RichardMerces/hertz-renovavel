@@ -5,6 +5,7 @@ import { Button, Toolbar, Typography } from "@material-ui/core";
 
 
 function Navbar(){
+    return(
     <>
     <AppBar position="static">
   <Toolbar>
@@ -16,5 +17,7 @@ function Navbar(){
 </AppBar>
     
     </>
+    )
 }
+
 export default Navbar;
