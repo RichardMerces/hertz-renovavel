@@ -12,6 +12,7 @@ function Navbar() {
           <Typography variant="h6">
             HERTZ
           </Typography>
+          <Button color="inherit">Sobre</Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
