@@ -4,20 +4,19 @@ import AppBar from '@material-ui/core/AppBar';
 import { Button, Toolbar, Typography } from "@material-ui/core";
 
 
-function Navbar(){
-    return(
+function Navbar() {
+  return (
     <>
-    <AppBar position="static">
-  <Toolbar>
-    <Typography variant="h6">
-      HERTZ
-    </Typography>
-    <Button color="inherit">Login</Button>
-  </Toolbar>
-</AppBar>
-    
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            HERTZ
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
     </>
-    )
+  );
 }
 
 export default Navbar;
