@@ -1,19 +1,38 @@
+import { Grid } from "@mui/material";
+import Avatar from '@material-ui/core/Avatar'
 import React from "react";
 import './Sobre.css'
+import FotoFran from '../img/letraFran.png'
+import FotoTay from '../img/letraTai.png'
 
-function Sobre(){
+function Sobre() {
     return (
-        <>
-            <h1>
-                Sobre nós
+        <Grid className="container">
+            <Grid item xs={12} paddingX={5}>
+                <h1>
+                    Sobre nós
                 </h1> <p>
-                A  HERTZ é uma empresa de engenharia elétrica que oferece diversas estratégias com base na gestão inteligente da energia elétrica, atuando com responsabilidade e ética profissional e empresarial.
+                    A  HERTZ é uma empresa de engenharia elétrica que oferece diversas estratégias com base na gestão inteligente da energia elétrica, atuando com responsabilidade e ética profissional e empresarial.
 
-O corpo técnico da empresa é composto por eletricistas, eletrotécnicos e engenheiros, que asseguram conformidade técnica, qualidade e o menor custo de implementação.
+                    O corpo técnico da empresa é composto por eletricistas, eletrotécnicos e engenheiros, que asseguram conformidade técnica, qualidade e o menor custo de implementação.
 
-A empresa presta assessoria durante todas as etapas de negociação, sendo uma parceira dos clientes que buscam uma relação de confiança e fidelidade.
-            </p>
-        </>
+                    A empresa presta assessoria durante todas as etapas de negociação, sendo uma parceira dos clientes que buscam uma relação de confiança e fidelidade.
+                </p>
+            </Grid>
+            
+
+            <Grid xs={12} className='img'>
+            </Grid>
+
+            <Grid>
+            <Avatar alt="Fotofran" src={FotoFran}/>
+             <a href="https://github.com/">Git</a>
+             <Avatar alt="FotoTay" src={FotoTay}/>
+             <Avatar alt="Richard" src="" />
+             <Avatar alt='fotomari' />
+             <Avatar alt ='fotoDavi'/>
+            </Grid>
+        </Grid>
     );
 }
 
