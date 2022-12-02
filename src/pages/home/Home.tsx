@@ -10,8 +10,7 @@ function Home(){
             <Grid xs={12} className='imagem'>
                 
             </Grid>
-               
-            
+                  
         </Grid>
     );
 }

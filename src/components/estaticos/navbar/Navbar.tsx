@@ -2,7 +2,8 @@ import React from "react";
 import './Navbar.css'
 import AppBar from '@material-ui/core/AppBar';
 import { Button, FormControl, Input, InputAdornment, InputLabel, Toolbar, Typography } from "@material-ui/core";
-import SearchIcon  from "@material-ui/icons/Search";
+import SearchIcon from "@material-ui/icons/Search";
+import { Box } from "@mui/material";
 
 
 function Navbar() {
@@ -13,19 +14,22 @@ function Navbar() {
           <Typography variant="h6">
             HERTZ
           </Typography>
+          <Button color="inherit">Home</Button>
           <Button color="inherit">Sobre</Button>
           <Button color="inherit">Login</Button>
-          <FormControl>
-        <InputLabel></InputLabel>
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start">
-              <SearchIcon/>
-            </InputAdornment>
-          }
-        />
-      </FormControl>
+          <Box display='flex' justifyContent='end'>
+            <FormControl>
+              <InputLabel></InputLabel>
+              <Input
+                className="barraPesquisa" id="input-with-icon-adornment" placeholder="Buscar..."
+                startAdornment={
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </Box>
         </Toolbar>
 
       </AppBar>
