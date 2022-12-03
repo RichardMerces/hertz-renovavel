@@ -15,7 +15,7 @@ function CadastroUsuario() {
         {
             id: 0,
             nome: '',
-            usuario: '',
+            email: '',
             senha: '',
             foto: ''
         })
@@ -24,16 +24,17 @@ function CadastroUsuario() {
         {
             id: 0,
             nome: '',
-            usuario: '',
+            email: '',
             senha: '',
             foto: ''
         })
 
-        useEffect(() => {
-            if (userResult.id != 0) {
-                navigate("/login")
-            }
-        }, [userResult])
+    useEffect(() => {
+        if (userResult.id != 0) {
+            
+            navigate("/login")
+        }
+    }, [userResult])
 
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
@@ -61,7 +62,7 @@ function CadastroUsuario() {
     }
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={6} className='imagem' >
+            <Grid item xs={6} className='imagem2' >
 
             </Grid>
             <Grid item xs={6} alignItems='center'>
@@ -72,7 +73,7 @@ function CadastroUsuario() {
                         </Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
 
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth />
+                        <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}id='email' label='email' variant='outlined' name='email' margin='normal'fullWidth />
 
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
 
