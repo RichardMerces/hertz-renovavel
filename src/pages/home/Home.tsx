@@ -8,9 +8,9 @@ function Home(){
             <h1>Olá, Mundo!</h1>
 
             <Grid xs={12} className='imagem'>
-                
+
             </Grid>
-                  
+
         </Grid>
     );
 }
