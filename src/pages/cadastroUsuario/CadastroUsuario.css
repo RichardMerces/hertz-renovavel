@@ -1,11 +1,10 @@
-.imagem{
-    background-image: url(https://evida.org.br/wp-content/uploads/2021/05/MicrosoftTeams-image-28.png);
+.imagem2{
+    background-image: url('../img/energiaLimpa.jpg');
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-
 }
 
 .textos{
