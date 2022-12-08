@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, useEffect }  from 'react';
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
@@ -58,7 +58,9 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                        <Link to='/cadastrar'>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                        </Link>
                     </Box>
                 </Box>
             </Grid>
