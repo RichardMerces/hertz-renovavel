@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/estaticos/footer/Footer';
 import Navbar from './components/estaticos/navbar/Navbar';
+import ListaProduto from './components/produtos/listaProdutos/ListaProdutos';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
@@ -23,6 +24,9 @@ function App() {
         <Route path="/sobre" element={<Sobre />} />
 
         <Route path="/cadastrar" element={<CadastroUsuario />} />
+        
+        <Route path="/produto" element={<ListaProduto />} />
+
 
       </Routes>
       <Footer />
