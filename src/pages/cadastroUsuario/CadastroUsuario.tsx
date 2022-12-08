@@ -6,6 +6,7 @@ import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import {Box} from '@mui/material';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
+import axios from 'axios';
 
 function CadastroUsuario() {
 
@@ -55,6 +56,15 @@ function CadastroUsuario() {
         if(confirmarSenha == user.senha){
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('usuario cadastrado com sucesso')
+            axios.post('https://ecommerce-i5bg.onrender.com/usuarios/cadastrar')
+  .then((response) => {
+      // Some code, req without errors
+  })
+  .catch((error) => {
+    if (error.response) {
+      console.log(error.response.status);
+    }
+  });
         } else {
             alert('dados incorretos')
         }
