@@ -16,19 +16,8 @@ function Navbar() {
           </Typography>
           <Button color="inherit">Home</Button>
           <Button color="inherit">Sobre</Button>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Logout</Button>
           <Box display='flex' justifyContent='end'>
-            <FormControl>
-              <InputLabel></InputLabel>
-              <Input
-                className="barraPesquisa" id="input-with-icon-adornment" placeholder="Buscar..."
-                startAdornment={
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                }
-              />
-            </FormControl>
           </Box>
         </Toolbar>
 

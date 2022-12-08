@@ -23,15 +23,6 @@ function Sobre() {
 
             <Grid xs={12} className='img'>
             </Grid>
-
-            <Grid>
-            <Avatar alt="Fotofran" src={FotoFran}/>
-             <a href="https://github.com/">Git</a>
-             <Avatar alt="FotoTay" src={FotoTay}/>
-             <Avatar alt="Richard" src="" />
-             <Avatar alt='fotomari' />
-             <Avatar alt ='fotoDavi'/>
-            </Grid>
         </Grid>
     );
 }
