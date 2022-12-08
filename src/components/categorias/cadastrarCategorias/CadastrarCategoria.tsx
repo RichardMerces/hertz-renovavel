@@ -54,7 +54,7 @@ function CadastrarCategoria() {
 
         if (id !== undefined) {
             console.log(categoria)
-            put(`/categorias/atualizar/`, categoria, setCategoria, {
+            put(`/categorias`, categoria, setCategoria, {
                 headers: {
                     'Authorization': token
                 }
