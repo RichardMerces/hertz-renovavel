@@ -10,6 +10,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Sobre from './pages/sobre/Sobre';
 import ListaProduto from './components/produtos/listaProdutos/ListaProdutos';
+import CadastrarProduto from './components/produtos/cadastrarProdutos/CadastrarProduto';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
 
         <Route path="/produtos" element={<ListaProduto />} />
 
+        <Route path="/cadastrarProdutos" element={<CadastrarProduto />} />
+
+        <Route path="/cadastrarProdutos/:id" element={<CadastrarProduto />} />
 
       </Routes>
       <Footer />

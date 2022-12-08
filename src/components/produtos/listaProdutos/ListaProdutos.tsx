@@ -58,7 +58,7 @@ function ListaProduto() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formularioProduto/${produto.idProduto}`} className="text-decorator-none" >
+                  <Link to={`/cadastrarProdutos/${produto.idProduto}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         atualizar

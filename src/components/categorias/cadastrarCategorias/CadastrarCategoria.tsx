@@ -54,14 +54,14 @@ function CadastrarCategoria() {
 
         if (id !== undefined) {
             console.log(categoria)
-            put(`/tema`, categoria, setCategoria, {
+            put(`/categorias/atualizar/`, categoria, setCategoria, {
                 headers: {
                     'Authorization': token
                 }
             })
             alert('Tema atualizado com sucesso');
         } else {
-            post(`/tema`, categoria, setCategoria, {
+            post(`/categorias`, categoria, setCategoria, {
                 headers: {
                     'Authorization': token
                 }
@@ -73,7 +73,7 @@ function CadastrarCategoria() {
     }
 
     function back() {
-        navigate('/temas')
+        navigate('/categorias')
     }
 
     return (
