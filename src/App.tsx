@@ -16,29 +16,33 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        
-        <Route path="/home" element={<Home />} />
-        
-        <Route path="/" element={<Home />} />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
 
-        <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
 
-        <Route path="/sobre" element={<Sobre />} />
+          <Route path="/" element={<Home />} />
 
-        <Route path="/cadastrar" element={<CadastroUsuario />} />
-        
-        <Route path="/cadastrarCategoria" element={<CadastroCategoria />} />
+          <Route path="/login" element={<Login />} />
 
-        <Route path="/categorias" element={<ListaCategorias />} />
+          <Route path="/sobre" element={<Sobre />} />
 
-        <Route path="/produtos" element={<ListaProduto />} />
+          <Route path="/cadastrar" element={<CadastroUsuario />} />
 
-        <Route path="/cadastrarProdutos" element={<CadastrarProduto />} />
+          <Route path="/cadastrarCategoria" element={<CadastroCategoria />} />
 
-        <Route path="/cadastrarProdutos/:id" element={<CadastrarProduto />} />
+          <Route path="/cadastrarCategoria/:id" element={<CadastroCategoria />} />
 
-      </Routes>
+          <Route path="/categorias" element={<ListaCategorias />} />
+
+          <Route path="/produtos" element={<ListaProduto />} />
+
+          <Route path="/cadastrarProdutos" element={<CadastrarProduto />} />
+
+          <Route path="/cadastrarProdutos/:id" element={<CadastrarProduto />} />
+
+        </Routes>
+      </div>
       <Footer />
     </Router>
   );
