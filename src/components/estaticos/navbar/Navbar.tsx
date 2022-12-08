@@ -25,28 +25,28 @@ function Navbar() {
             HERTZ
           </Typography>
           <Box display="flex" justifyContent="start">
-                        <Link to="/home" className="text-decorator-none">
-                            <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Home
-                                </Typography>
-                            </Box>
-                        </Link>
-                        <Link to="/sobre" className="text-decorator-none">
-                            <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Sobre
-                                </Typography>
-                            </Box>
-                        </Link>
-                        
-                            <Box mx={1} className='cursor' onClick={goLogout}>
-                                <Typography variant="h6" color="inherit">
-                                    logout
-                                </Typography>
-                            </Box>
-                        
-                    </Box>
+            <Link to="/home" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Home
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/sobre" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Sobre
+                </Typography>
+              </Box>
+            </Link>
+
+            <Box mx={1} className='cursor' onClick={goLogout}>
+              <Typography variant="h6" color="inherit">
+                logout
+              </Typography>
+            </Box>
+
+          </Box>
         </Toolbar>
 
       </AppBar>
