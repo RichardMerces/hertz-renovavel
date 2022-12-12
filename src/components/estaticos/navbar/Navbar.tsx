@@ -40,6 +40,38 @@ function Navbar() {
               </Box>
             </Link>
 
+            <Link to="/produtos" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Produtos
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to="/cadastrarProdutos" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Cadastrar Produto
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to="/categorias" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Categorias
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to="/cadastrarCategoria" className="text-decorator-none">
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  Cadastrar Categoria
+                </Typography>
+              </Box>
+            </Link>
+
             <Box mx={1} className='cursor' onClick={goLogout}>
               <Typography variant="h6" color="inherit">
                 logout
