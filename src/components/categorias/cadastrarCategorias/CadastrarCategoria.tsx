@@ -32,7 +32,7 @@ function CadastrarCategoria() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/tema/${id}`, setCategoria, {
+        buscaId(`/categorias/${id}`, setCategoria, {
             headers: {
                 'Authorization': token
             }
@@ -59,14 +59,14 @@ function CadastrarCategoria() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado com sucesso');
+            alert('Categoria atualizada com sucesso');
         } else {
             post(`/categorias`, categoria, setCategoria, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            alert('Categoria cadastrada com sucesso');
         }
         back()
 

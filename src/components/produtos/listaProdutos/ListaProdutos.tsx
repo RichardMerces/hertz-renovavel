@@ -52,6 +52,9 @@ function ListaProduto() {
                   {produto.descricao}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  {produto.categoria?.nome}
+                </Typography>
+                <Typography variant="body2" component="p">
                   {produto.preco}
                 </Typography>
               </CardContent>
