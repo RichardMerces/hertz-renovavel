@@ -2,8 +2,8 @@ import { Grid } from "@mui/material";
 import Avatar from '@material-ui/core/Avatar'
 import React from "react";
 import './Sobre.css'
-import FotoFran from '../img/letraFran.png'
-import FotoTay from '../img/letraTai.png'
+import Cards from "../../components/cards/Cads";
+
 
 function Sobre() {
     return (
@@ -21,8 +21,10 @@ function Sobre() {
             </Grid>
             
 
-            <Grid xs={12} className='img'>
-            </Grid>
+            
+            
+            
+            <Cards/>
         </Grid>
     );
 }
