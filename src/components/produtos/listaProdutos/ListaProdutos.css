@@ -1,3 +1,17 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.imageBoard {
+    align-items: center;
+}
+
+.imageSize {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}

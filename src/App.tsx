@@ -13,6 +13,7 @@ import ListaProduto from './components/produtos/listaProdutos/ListaProdutos';
 import CadastrarProduto from './components/produtos/cadastrarProdutos/CadastrarProduto';
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
+import DetalheProduto from './components/produtos/detalheProduto/detalheProduto';
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
           <Route path="/cadastrarProdutos/:id" element={<CadastrarProduto />} />
 
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+
+          <Route path="/detalheProduto/:id" element={<DetalheProduto />} />
 
         </Routes>
       </div>
