@@ -2,37 +2,42 @@ import { Avatar, Box, Card, CardContent, CardMedia, Grid, Typography } from "@ma
 import React from "react";
 import './Cards.css';
 import { render } from "react-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 function Cards() {
 
-    const nomes = ['Richard', 'Franciele', 'Mariana', 'Henrique', 'Taiana', 'Davi']
-
+    const integrantes = [ {Nome: "Richard", Foto: "./img/richard.jpg", github: "https://github.com/RichardMerces", linkedin: "https://www.linkedin.com/in/richardmerces/"},  {Nome: "Franciele", Foto: "./img/fran.jpg", github: "https://github.com/Francieleber", linkedin: "https://www.linkedin.com/in/franciele-bernardino/"}, {Nome: "Henrique", Foto:"./img/henrique.jpg", github: "https://github.com/HenriqueMarts", linkedin: "https://www.linkedin.com/in/henrique-marts/"}, {Nome: "Taiana", Foto: "./img/thay.jpg", github: "https://github.com/ThayJSilva", linkedin: "https://www.linkedin.com/in/taiana-silva/"}, {Nome: "Davi", Foto: "./img/davi.jpg", github: "https://github.com/mussersupremo", linkedin: "https://www.linkedin.com/in/davi-musser/"}, {Nome: "Mariana", Foto: "./img/mari.jpg", github: "https://github.com/Marianasantos142", linkedin: "https://www.linkedin.com/in/mariiana-santos/"}]
+    const navigate = useNavigate();
+    
+   
     return (
         <>
             <Grid container direction="row" justifyContent="center">
                 {
-                    nomes.map(nome => (
+                    integrantes.map(integrante => (
                         <Box m={3} justifyContent="center" alignItems={"center"}>
                             <Card variant="outlined" className="card">
                                 <CardContent>
                                     <Grid>
-                                        <CardMedia image={('')} component="img" title='Integrante' className='imgAvatar' />
+                                        <CardMedia image={require(`${integrante.Foto}`)} component="img" title='Integrante' className='imgAvatar' />
                                     </Grid>
                                     <Grid className='content'>
                                     <Typography variant="h5" component="h2">
-                                        {nome}
+                                        {integrante.Nome}
                                     </Typography>
                                     </Grid>
                                     <ul className="card-social">
-                                        <li className="card-social__item">
+                                        <li className="card-social__item">  
+                                        <a href={`${integrante.github}`} target="_blank">
                                             <CardMedia image={require('../img/github.png')} component="img" title='github'
-                                            />
+                                            /></a>
                                         </li>
                                         <li className="card-social__item">
-                                            <CardMedia image={require('../img/linked-in-logo.png')} component="img" title='linkedin'
-                                            />
+                                        <a href={`${integrante.linkedin}`} target="_blank">
+                                            <CardMedia image={require('../img/linked-in-logo.png')} component="img" title='linkedin' onClick={() => navigate(integrante.linkedin)}
+                                            /></a>
                                         </li>
                                     </ul>
                                 </CardContent>
