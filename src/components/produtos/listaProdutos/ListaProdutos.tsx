@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, CardActions, CardContent, Button, Typography, Grid, CardMedia } from '@material-ui/core';
+import { Card, CardContent, Button, Typography, Grid, CardMedia } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './ListaProdutos.css';
-import useLocalStorage from 'react-use-localstorage';
 import { useNavigate, useParams } from 'react-router-dom'
 import Produto from '../../../models/Produto';
 import { busca } from '../../../services/Service';
 import BoxButtons from '../boxButtons/BoxButtons';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaProduto() {
   const [produto, setProduto] = useState<Produto[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let navigate = useNavigate();
 
   useEffect(() => {
