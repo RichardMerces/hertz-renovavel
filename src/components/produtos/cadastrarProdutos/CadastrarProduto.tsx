@@ -1,17 +1,20 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Box, Grid } from "@material-ui/core";
 import './CadastrarProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function CadastrarProduto() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -106,34 +109,51 @@ function CadastrarProduto() {
 
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Produto</Typography>
-                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
-                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preço" name="preco" variant="outlined" margin="normal" fullWidth />
+            <Grid alignItems='center' xs={10} className="box login-box2">
+                <h1>CADASTRAR PRODUTOS</h1>
+                <form onSubmit={onSubmit}>
 
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/categorias/${e.target.value}`, setCategoria, {
-                            headers: {
-                                'Authorization': token
-                            }
-                        })}>
-                        {
-                            categorias.map(categoria => (
-                                <MenuItem value={categoria.idCategoria}>{categoria.nome}</MenuItem>
-                            ))
-                        }
-                    </Select>
-                    <FormHelperText>Escolha a categoria do produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Grid container spacing={10}>
+                        <Grid item xs={5}>
+                            <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
+                            <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descrição" name="descricao" variant="outlined" margin="normal" fullWidth />
+                        </Grid>
+                        <Grid item xs={5}>
+                        <TextField value={produto.foto_produto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="foto" label="Foto" variant="outlined" name="foto_produto" margin="normal" fullWidth />
+                            <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preço" name="preco" variant="outlined" margin="normal" fullWidth />
+
+                            <FormControl >
+                                <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-helper-label"
+                                    id="demo-simple-select-helper"
+                                    onChange={(e) => buscaId(`/categorias/${e.target.value}`, setCategoria, {
+                                        headers: {
+                                            'Authorization': token
+                                        }
+                                    })}>
+                                    {
+                                        categorias.map(categoria => (
+                                            <MenuItem value={categoria.idCategoria}>{categoria.nome}</MenuItem>
+                                        ))
+                                    }
+                                </Select>
+                                <FormHelperText>Escolha a categoria do produto</FormHelperText>
+
+                            </FormControl>
+                        </Grid>
+
+                    </Grid>
+
+                    <Button type="submit" variant="contained" color="primary"  className='centro'>
                         Finalizar
                     </Button>
-                </FormControl>
-            </form>
+
+                </form>
+
+            </Grid>
+
+
         </Container>
     )
 }

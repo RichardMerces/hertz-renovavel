@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './ListaCategorias.css';
-import useLocalStorage from 'react-use-localstorage';
 import {useNavigate } from 'react-router-dom'
 import { busca } from '../../../services/Service';
 import Categoria from '../../../models/Categoria';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaCategorias() {
   const [categoria, setCategoria] = useState<Categoria[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let navigate = useNavigate();
 
   useEffect(()=>{
@@ -57,14 +60,14 @@ function ListaCategorias() {
           <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5} >
 
-              <Link to={`/formularioTema/${categoria.idCategoria}`} className="text-decorator-none">
+              <Link to={`/cadastrarCategoria/${categoria.idCategoria}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" className="marginLeft" size='small' color="primary" >
                     atualizar
                   </Button>
                 </Box>
               </Link>
-              <Link to={`/deletarTema/${categoria.idCategoria}`} className="text-decorator-none">
+              <Link to={`/deletarCategoria/${categoria.idCategoria}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
                     deletar

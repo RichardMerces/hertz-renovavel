@@ -5,6 +5,7 @@ import { Button, FormControl, Input, InputAdornment, InputLabel, Toolbar, Typogr
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+import Logo from "../../../pages/img/logo.png"
 
 
 function Navbar() {
@@ -19,71 +20,57 @@ function Navbar() {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className="fund">
         <Toolbar variant="dense">
-          <Typography variant="h6">
-            HERTZ
-          </Typography>
           <Box display="flex" justifyContent="start">
             <Link to="/home" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Home
-                </Typography>
+              <Box mx={1} className='cursor logo'>
+                <div ><img src={Logo} /></div>
               </Box>
             </Link>
+
             <Link to="/sobre" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Sobre
-                </Typography>
+              <Box mx={1} className='cursor meio'>
+                <button className="cta"><span className="hover-underline-animation"> Sobre </span></button>
               </Box>
             </Link>
 
             <Link to="/produtos" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Produtos
-                </Typography>
+              <Box mx={1} className='cursor meio'>
+                <button className="cta"><span className="hover-underline-animation"> Produtos </span></button>
               </Box>
             </Link>
 
             <Link to="/cadastrarProdutos" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Cadastrar Produto
-                </Typography>
+              <Box mx={1} className='cursor meio'>
+                <button className="cta"><span className="hover-underline-animation"> Cadastrar Produtos </span></button>
               </Box>
             </Link>
 
             <Link to="/categorias" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Categorias
-                </Typography>
+              <Box mx={1} className='cursor meio'>
+                <button className="cta"><span className="hover-underline-animation"> Categorias </span></button>
               </Box>
             </Link>
 
             <Link to="/cadastrarCategoria" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  Cadastrar Categoria
-                </Typography>
+              <Box mx={1} className='cursor meio'>
+                <button className="cta"><span className="hover-underline-animation"> Cadastrar Categorias </span></button>
               </Box>
             </Link>
 
-            <Box mx={1} className='cursor' onClick={goLogout}>
-              <Typography variant="h6" color="inherit">
-                logout
-              </Typography>
+            <Box mx={1} className='cursor meio' onClick={goLogout}>
+
+              <button className="cta"><span className="hover-underline-animation"> Sair</span></button>
             </Box>
 
           </Box>
+
         </Toolbar>
 
       </AppBar>
     </>
-  );
+  )
 }
 
 export default Navbar;
