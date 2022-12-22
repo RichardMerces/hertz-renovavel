@@ -47,7 +47,7 @@ function DetalheProduto() {
                 <Box m={10}>
                     <Card variant="outlined">
                         <CardContent className='imageBoard'>
-                            <CardMedia image={require('../imagens/semProduto.png')} component="img" title='produto' className='imageSize' />
+                        <CardMedia image={`${produto?.foto_produto}`} component="img" title='produto' className='imageSize' />
                         </CardContent>
                         <CardContent>
                             <Typography variant="h5" component="h2">

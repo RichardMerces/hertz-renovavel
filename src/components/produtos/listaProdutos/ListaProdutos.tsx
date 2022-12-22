@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaProduto() {
+  /*   const img= require.context("../imagens/Fotos-produtos", true) */
   const [produto, setProduto] = useState<Produto[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -46,10 +47,10 @@ function ListaProduto() {
           produto.map(produto => (
             <Box m={2} className="pointer" onClick={() => { navigate(`/detalheProduto/${produto.idProduto}`) }} >
               <Card variant="outlined">
-              <CardContent className='imageBoard'>
-                <CardMedia image={require('../imagens/semProduto.png')} component="img" title='produto' className='imageSize' />
-                </CardContent>
                 <CardContent>
+                  <CardContent className='imageBoard'>
+                    <CardMedia image={`${produto.foto_produto}`} component="img" title='produto' className='imageSize' />
+                  </CardContent>
                   <Typography variant="h5" component="h2">
                     {produto.nome}
                   </Typography>
